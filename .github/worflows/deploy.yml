@@ -33,6 +33,17 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist' # Vite outputs here by default
+          
+      # 1. Fix the 404s (Copy index to 404)
+      # ⚠️ Notice the path is now 'build/client', NOT 'dist'
+      - name: Fix 404s
+        run: cp build/client/index.html build/client/404.html
+
+      # 2. Upload the correct folder
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './build/client' # 👈 THIS CHANGED
 
   deploy:
     environment:

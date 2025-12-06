@@ -1,15 +1,49 @@
-@import "tailwindcss";
+:root {
+  /* --- The Canvas (Backgrounds) --- */
+  /* That rich dark charcoal from the card background */
+  --bg-dark: #1a1a1a;
+  /* Slightly lighter for cards/sections */
+  --bg-panel: #262626;
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* --- The 'Gold' (Accents) --- */
+  /* The Terracotta/Clay from the headwrap - USE FOR BUTTONS */
+  --accent-primary: #cd5c3b;
+  /* A lighter version for hover states */
+  --accent-hover: #e06d4b;
+  
+  /* --- The Culture (Secondary) --- */
+  /* The deep mahogany/wood red from the borders */
+  --wood-red: #5e1e1e;
+  /* The skin tone bronze for subtle details */
+  --bronze: #8f5e48;
+
+  /* --- The Ink (Typography) --- */
+  /* Pure white for headers (like the logo) */
+  --text-main: #ffffff;
+  /* Light gray for secondary info (like the address) */
+  --text-muted: #d4d4d4;
 }
 
-html,
+/* Apply the vibe globally */
 body {
-  @apply bg-white dark:bg-gray-950;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: sans-serif; /* Swap this for a classy font later */
+  margin: 0;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+/* EXAMPLE: How to style your buttons with this */
+.btn-gold {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-gold:hover {
+  background-color: var(--accent-hover);
 }
