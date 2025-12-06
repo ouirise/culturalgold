@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cultural Gold Precise Vector</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        svg {
+            width: 350px;
+            height: 350px;
+            /* Box shadow to simulate the card cutout effect */
+            filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
+        }
+    </style>
+</head>
+<body>
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- 1. The Container: Perfect White Circle -->
+    <circle cx="100" cy="100" r="95" fill="#ffffff" />
+
+    <!-- 2. The Headwrap (Gele) -->
+    <!-- This shape anchors the composition. It sits heavy on the back of the head. -->
+    <defs>
+        <!-- Clipping path to keep the pattern inside the wrap -->
+        <path id="wrap-shape" 
+              d="M 102,72 
+                 C 95,65 92,30 65,40 
+                 C 35,50 35,90 40,110 
+                 C 45,130 65,145 88,135 
+                 C 88,135 88,115 88,115
+                 L 102,72 Z" />
+    </defs>
+
+    <!-- Wrap Base Color -->
+    <use href="#wrap-shape" fill="#c25e39" />
+
+    <!-- Wrap Pattern: Interaction of diagonals -->
+    <g clip-path="url(#wrap-shape)" stroke="#7a2e15" stroke-width="1.5" fill="none">
+        <!-- Grid pattern simulating the fabric texture -->
+        <path d="M 30,80 L 100,40" />
+        <path d="M 30,100 L 110,50" />
+        <path d="M 30,120 L 120,60" />
+        <path d="M 30,140 L 130,70" />
+
+        <path d="M 50,30 L 110,140" />
+        <path d="M 70,30 L 120,130" />
+        <path d="M 90,30 L 130,110" />
+        
+        <!-- The "Tuft" details at the crown (Top knot) -->
+        <path d="M 70,40 L 75,30" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 80,42 L 88,32" stroke-width="3" stroke-linecap="round"/>
+        <path d="M 60,45 L 60,35" stroke-width="3" stroke-linecap="round"/>
+        
+        <!-- Center details in the diamonds (simulating the print) -->
+        <circle cx="65" cy="75" r="1.5" fill="#7a2e15" stroke="none"/>
+        <circle cx="82" cy="65" r="1.5" fill="#7a2e15" stroke="none"/>
+        <circle cx="55" cy="95" r="1.5" fill="#7a2e15" stroke="none"/>
+        <circle cx="75" cy="95" r="1.5" fill="#7a2e15" stroke="none"/>
+    </g>
+
+    <!-- 3. The Face (Silhouette) -->
+    <!-- Interaction: The forehead must merge seamlessly into the wrap line -->
+    <path d="M 102,72 
+             Q 104,85 108,88      <!-- Forehead slope -->
+             L 128,100            <!-- Nose bridge to tip -->
+             Q 125,108 118,108    <!-- Under nose -->
+             Q 122,112 122,118    <!-- Lips (Full) -->
+             Q 118,125 105,128    <!-- Chin receding -->
+             Q 98,128 95,140      <!-- Neck Front -->
+             L 95,152             <!-- Neck Bottom -->
+             L 85,150             <!-- Neck Width -->
+             L 88,135             <!-- Back of neck meeting wrap -->
+             L 102,72 Z" 
+          fill="#3b2b25" />
+
+    <!-- 4. The Earring -->
+    <!-- Interaction: A light spiral contrasting against the dark neck/jaw shadow -->
+    <path d="M 103,125 
+             C 100,125 95,130 98,138 
+             C 100,142 106,140 105,135 
+             C 104,132 103,132 103,132" 
+          fill="none" stroke="#dcb465" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- 5. The Collar / Base Stroke -->
+    <!-- Balances the composition at the bottom -->
+    <path d="M 92,160 Q 105,165 118,160" 
+          stroke="#c25e39" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+</svg>
+
+</body>
+</html>
