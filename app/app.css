@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kedebideri:wght@400;500;600;700;800;900&family=Ojuju:wght@200..800&family=Shadows+Into+Light&family=Smooch&display=swap');
+
 :root {
+  --font-em: 'Ojuju', cursive;
+  --font-heading: 'Ojuju', cursive;
+  --font-strong: 'Bebas Neue', sans-serif;
+  --font-body: 'Kedebideri', sans-serif;
+  --font-ital: 'Shadows Into Light', cursive;
   /* --- The Canvas (Backgrounds) --- */
   /* That rich dark charcoal from the card background */
   --bg-dark: #1a1a1a;
   /* Slightly lighter for cards/sections */
-  --bg-panel: #262626;
+  --bg-panel: rgba(38, 38, 38, 0.5);
 
   /* --- The 'Gold' (Accents) --- */
   /* The Terracotta/Clay from the headwrap - USE FOR BUTTONS */
@@ -16,6 +23,7 @@
   --wood-red: #5e1e1e;
   /* The skin tone bronze for subtle details */
   --bronze: #8f5e48;
+  --gold: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
 
   /* --- The Ink (Typography) --- */
   /* Pure white for headers (like the logo) */
@@ -24,13 +32,49 @@
   --text-muted: #d4d4d4;
 }
 
-* { overflow-x: hidden; box-sizing: border-box; padding: 0; margin: 0;}
+
+
+body {
+  font-family: var(--font-body);
+  /* ... rest of body ... */
+}
+
+.ital {
+  font-family: var(--font-ital);
+}
+/* Make headers pop */
+h1, h2, h3, .brand-text {
+  font-size: 2rem;
+  font-family: var(--font-em);
+  color: var(--accent-primary); /* Uses the terracotta color */
+
+}
+h1, .heading, .em {
+  font-family: var(--font-heading);
+  width: fit-content;
+  padding: 0 16px 0;
+  text-align: center;
+  color: transparent;
+  letter-spacing: 5px;
+  font-size: 32pt;
+  background-image: var(--gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  right: 16px;
+}
+
+* { box-sizing: border-box; padding: 0; margin: 0;}
 
 /* Apply the vibe globally */
 body {
   background-color: var(--bg-dark);
   color: var(--text-main);
-  font-family: sans-serif; /* Swap this for a classy font later */
+  font-family: var(--font-body);
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* EXAMPLE: How to style your buttons with this */
@@ -56,12 +100,17 @@ header {
   border-bottom: 4px solid var(--wood-red);
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
 }
 
 nav ul {
   list-style: none;
   display: flex;
+  font-family: var(--font-strong);
+  letter-spacing: 2px;
+  font-size: 1.25rem;
+  align-items: flex-end;
+  padding: 0;
 }
 
 a, a:visited, a:active {
@@ -76,15 +125,174 @@ nav a:hover {
 }
 
 main {
-  min-height: 80vh;
   padding: 20px;
 }
 
 footer {
+  min-height: 32px;
   background-color: var(--bg-panel);
   color: var(--text-muted);
-  text-align: center;
   padding: 15px;
   border-top: 4px solid var(--wood-red);
-  margin-top: 20px;
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+address {
+  font-family: var(--font-body);
+  display: block;
+}
+
+article.hero section {
+  padding: 40px 20px;
+  background-color: var(--bg-panel);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+article.hero section h2, article.hero section h3 {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+.btn {
+  background-color: var(--bg-dark);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-family: var(--font-strong);
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+  width: fit-content;
+}
+.btn:hover {
+  background-color: var(--accent-primary);
+}
+
+.em {
+  font-size: 1.2em;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 2em;
+  color: var(--accent-primary); /* Uses the terracotta color */
+}
+
+.strong {
+  font-family: var(--font-strong);
+  font-weight: bold;
+  color: var(--accent-hover); /* Uses the terracotta color */
+}
+
+.body {
+  font-size: var(--font-body);
+}
+
+.collections {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  gap: 1rem; /* spacing between cards */
+  padding: 1rem;
+}
+
+.card.collection {
+  flex: 0 0 auto; /* don’t shrink, keep intrinsic width */
+  min-width: 600px; /* adjust as needed */
+  width: 900px;
+  scroll-snap-align: start; /* snap each card to start */
+  border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: var(--bg-panel);
+  padding: 1rem;
+  transition: transform 0.3s ease;
+  justify-content: space-between;
+}
+.card.collection:hover {
+  transform: scale(1.05); /* optional hover pop */
+}
+
+
+.collections::-webkit-scrollbar {
+  height: 8px; /* small horizontal scrollbar */
+}
+
+.collections::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.0);
+  border-radius: 4px;
+}
+.card.collection .btn {
+  font-size: 1rem;
+  background: rgba(0,0,0,0.15);
+  margin-left: auto;
+}
+.card.collection .btn:hover {
+  background: var(--accent-primary);
+}
+
+.contact-form{display:flex;flex-direction:column;gap:12px;max-width:520px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;border-radius:4px;border:1px solid #e8e8e8}
+
+
+.card {
+  background: var(--bg-panel);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 1.2rem;
+  width: 600px;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  margin-left: auto;
+  margin-right: 16px;
+  text-align: right;
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  nav ul {
+    gap: 10px;
+    padding: 0;
+  }
+
+  a, a:visited {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  .collections {
+    flex-direction: column;
+  }
+
+  .collection.card {
+    max-width: 80vw;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 16px;
+  }
 }
