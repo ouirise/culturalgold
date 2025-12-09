@@ -11,7 +11,7 @@ export default function GlobalLayout({ children }: { children: React.ReactNode }
 function Header() {
     return (
         <header>
-        <a href='/'><h1>Cultural Gold</h1></a>
+        <a href='/culturalgold/'><h1>Cultural Gold</h1></a>
         <nav>
         <ul>
             <li><a href="/culturalgold/#shop">Shop</a></li>
@@ -30,7 +30,6 @@ import 'react-social-icons/facebook'
 function Footer() {
     return (
     <footer className="footer">
-        
         <section className="links">
             <h2 className="strong">Get Connected</h2>
             <a href="mailto:culturalgold79@gmail.com">culturalgold79@gmail.com</a>
@@ -40,9 +39,9 @@ function Footer() {
             <SocialIcon className="social" url="www.instagram.com" href="https://www.instagram.com/culturalgold79/" bgColor={`rgba(38, 38, 38, 0.5);`} />
             <SocialIcon className="social" url="www.facebook.com" href="https://www.facebook.com/" bgColor={`rgba(38, 38, 38, 0.5);`} />
             </div>
-      </section>
+        </section>
 
-              <a className="em" href="/culturalgold/"><h2 className="em">Cultural Gold</h2></a>
+              <a className="em" href="/"><h2 className="em">Designed and Developed with Ourise.Initiative</h2></a>
 
       
         <form id="contact" className="contact-form">
@@ -58,8 +57,6 @@ function Footer() {
             <button className="btn" type="button">(Send)</button>
             
         </form>
-    
-
   </footer>
     )
 }

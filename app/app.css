@@ -147,10 +147,9 @@ footer a {
   display: block;
 }
 
-#contact button.btn {
+#contact .btn {
   margin-top: 0.5rem;
   color: var(--text);
-  padding: 0.7rem 1.2rem;
   border-radius: 6px;
   width: 100%;
 }
@@ -185,7 +184,7 @@ article.hero section h2, article.hero section h3 {
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
   text-decoration: none;
   font-family: var(--font-strong);
   letter-spacing: 2px;
@@ -297,16 +296,6 @@ h1, .heading, .em {
 .contact-form label {
   text-align: left;
   line-height: 2rem;
-}
-.contact-form button {
-  text-align: right;
-  transition: text-align 0.3s ease;
-}
-.contact-form button:hover {
-  text-align: center;
-}
-.contact-form button:active {
-  text-align: left;
 }
 
 .card {
