@@ -1,13 +1,25 @@
 import Layout from "~/layout";
-import { featuredCollections } from "~/data"
 import type { JSX } from "react";
+import { useEffect, useState } from "react";
 
-interface Collection { name: string, symbol: string[], focus: string, description: string, category: string}
-
+interface Collection {
+  name: string;
+  symbol: string[];
+  focus: string;
+  description: string;
+  category: string;
+}
 export default function Home() {
+  const [collections, setCollections] = useState<Collection[]>([]);
 
-    return (
-        <Layout>
+  useEffect(() => {
+    fetch("public/data.json")
+      .then((res) => res.json())
+      .then((data) => setCollections(data));
+  }, []);
+
+  return (
+    <Layout>
             <article className="hero">
             <section>
             <h2 className="ital"><span className="em">Cultural</span>Infused Goods</h2>
@@ -17,24 +29,37 @@ export default function Home() {
             </article>
 
             <div id="shop">.</div>
-            <h2  className="ital center">Cultural Collections</h2>
+      <h2 className="ital center">Cultural Collections</h2>
 
             <article className="collections">
-                {featuredCollections.slice(0, 2).map((collection: Collection): JSX.Element => (
-                    <CollectionCard key={collection.name} name={collection.name} symbol={collection.symbol} category={collection.category} focus={collection.focus} description={collection.description} />
+                {collections.slice(0, 2).map((collection: Collection): JSX.Element => (
+          <CollectionCard
+            key={collection.name}
+            name={collection.name}
+            symbol={collection.symbol}
+            category={collection.category}
+            focus={collection.focus}
+            description={collection.description}
+          />
                 ))}
-                
             </article>
             <article className="collections">
-            {featuredCollections.slice(2, 4).map((collection: Collection): JSX.Element => (
-                    <CollectionCard key={collection.name} name={collection.name} symbol={collection.symbol} category={collection.category} focus={collection.focus} description={collection.description} />
+            {collections.slice(2, 4).map((collection: Collection): JSX.Element => (
+          <CollectionCard
+            key={collection.name}
+            name={collection.name}
+            symbol={collection.symbol}
+            category={collection.category}
+            focus={collection.focus}
+            description={collection.description}
+          />
                 ))}
             </article>
         </Layout>
-    )
+  );
 }
 
-function CollectionCard({ name, symbol, category, focus, description}: Collection) {
+function CollectionCard({ name, symbol, category, focus, description }: Collection) {
     return (
         <div className="card collection" key={name}>
                         {/* <img src={`/images/${category}.jpg`} alt={name} /> */}
@@ -45,5 +70,5 @@ function CollectionCard({ name, symbol, category, focus, description}: Collectio
                         {symbol.map(s => <a href="/culturalgold/about" className="right">{s}</a>)}
                         <a className="btn">View Collection</a>
                     </div>
-    )
+  );
 }
