@@ -1,5 +1,5 @@
 import Layout from "~/components/layout";
-import type { JSX } from "react";
+import type { JSX, MouseEvent } from "react";
 import { useEffect, useState } from "react";
 import '~/css/home.css'
 
@@ -34,7 +34,7 @@ export default function Home() {
       <p>Celebrating the love and enduring spirit of Africa</p>
       <p><span className="ital">The vibrant creativity</span>,<span className="heading small"> the rich stories</span>, <span className="strong small">the enduring legacy</span></p>
       <p>We invite to connect and rediscover the <span className="ital">beauty</span> that resides <span className="strong small">within</span></p>
-      <a className="btn" onClick={(e) => scrollToElement(e, 'shop')}>Unearth Your Legacy</a>
+      <a className="btn" onClick={(e) => scrollToElement(e, 'shop')}>Unearth Your Legacy «</a>
       </article>
 
       <div id="shop">/</div>
@@ -57,15 +57,21 @@ export default function Home() {
 }
 
 function CollectionCard({ name, symbol, category, focus, description }: Collection) {
+  const sendMessage = (e: MouseEvent) => {
+    e.preventDefault()
+
+    alert("demo only")
+
+  }
     return (
         <div className="card collection" key={name}>
           {/* <img src={`/images/${category}.jpg`} alt={name} /> */}
           <h4 className="em">{name.toUpperCase()}</h4>
           <p>{focus} {category}</p>
-          <p>{description}</p>
+          <p className='desc'>{description}</p>
 
           <a href="/culturalgold/about" className="right">{symbol}</a>
-          <a className="btn" href={`/culturalgold/collections/${category.toLowerCase()}`}>View Collection</a>
+          <a className="btn" onClick={(e) => sendMessage(e)} href={`/culturalgold/collections/${category.toLowerCase()}`}>View Collection</a>
       </div>
   );
 }

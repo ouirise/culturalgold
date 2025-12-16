@@ -19,6 +19,9 @@ main {
   align-items: center;
   background: linear-gradient(-30deg, rgba(255,255,255, 0.1), rgba(12,12,12, 0.1));
 }
+.hero h2 {
+    text-align: center;
+  }
 .hero p, .hero h2 {
   line-height: 2rem;
 }
@@ -82,9 +85,6 @@ main {
   min-width: 250px;
   position: relative;
 }
-.collection p {
-  width: 50%;
-}
 .collection a {
   position: relative;
 }
@@ -98,17 +98,12 @@ main {
 
 /* Media Queries for Responsive Design */
 
-/* Mobile (Default) */
-.card {
-  width: 100%;
-}
-
-.collections {
-  grid-template-columns: 1fr;
-}
-.card a {
-  width: 24rem;
-  text-align: center;
+/* Mobile*/
+@media (max-width: 769px) {
+  #shop {
+    margin-bottom: 16vh;
+  }
+  
 }
 
 /* Tablet */
@@ -126,7 +121,3 @@ main {
 @media (min-width: 1025px) {
 
 }
-
-
-
-

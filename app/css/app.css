@@ -23,7 +23,7 @@
   /* The deep mahogany/wood red from the borders */
   --wood-red: #5e1e1e;
   /* The skin tone bronze for subtle details */
-  --highlight: #d7a93b;
+  --highlight: rgba(255, 171, 0, 0.62);
   --text-main: #fff;
 }
 
@@ -159,6 +159,17 @@ button, .button, .btn {
   font-size: 4rem;
   background: none;
   border: none;
+  background: var(--bg-panel);
+  color: var(--accent-hover);
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background: var(--accent-primary);
+  color: var(--wood-red);
+}
+.btn:active {
+  background: var(--highlight);
+  color: var(--wood-red);
 }
 .small {
   font-size: 1.5rem
@@ -166,26 +177,27 @@ button, .button, .btn {
 
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: center;
   border-top: 3px solid var(--wood-red);
-  padding: 1rem;
+  padding: 1rem 0;
 }
 footer * {
   transition: all 0.2s ease;
 }
 footer form, footer section {
-  width: 30vw;
+  width: 45vw;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   border: solid black 1px;
   border-radius: 10px;
   padding: 1rem;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background: var(---bg-panel);
 }
   
-footer label {
+form label {
   display: flex;
   flex-direction: column;
   font-size: 2rem;
@@ -200,6 +212,8 @@ input, textArea {
   min-height: 4rem;
   border: none;
   border-radius: 4px;
+  color: #fff;
+  font-size: 1.2rem;
 }
 textArea {
   height: 8rem;
@@ -227,6 +241,7 @@ footer > a:hover {
   border-radius: 4px;
   padding: 1rem;
   width: 50%;
+  color: var(--accent-hover);
   
 }
 footer section div {
@@ -239,4 +254,53 @@ footer section div {
 textArea {height: fit-content;}
 .social {
   
+}
+
+.column {
+display: flex;
+flex-wrap: wrap;
+}
+
+
+/* Mobile */
+@media (max-width: 769px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    gap: 1.3rem;
+    padding: 1rem;
+  }
+  header > h1 > a{
+    font-size: 2rem;
+  }
+  header nav a {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  footer section, footer form {
+    width: 90%;
+  }
+}
+/* Tablet */
+@media (min-width: 769px) {
+  
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+
 }

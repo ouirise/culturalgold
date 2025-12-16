@@ -2,11 +2,11 @@ import '~/css/app.css'
 
 export default function GlobalLayout({ children }: { children: React.ReactNode }) { 
     return (
-        <body>
+        <>
         <Header />
         <main>{children}</main>
         <Footer />
-        </body>
+        </>
     )
 }
 
@@ -30,17 +30,21 @@ import 'react-social-icons/instagram'
 import 'react-social-icons/facebook'
 
 function Footer() {
+    const sendMessage = () => {
+        alert('demo only')
+    }
     return (
     <footer className="footer">
         <section className="links">
-            <a className="heading" href="/"><h2 className="em">Cultural Gold</h2></a>
             <h2 className="strong">Get Connected</h2>
+            <div className="column">
             <a href="mailto:culturalgold79@gmail.com">culturalgold79@gmail.com</a>
             <a href="tel:+(980) 800-2822">(980) 800-2822</a>
+            </div>
             
             <div className="grid">
-            <SocialIcon className="social" url="www.instagram.com" href="https://www.instagram.com/culturalgold79/" bgColor={`rgba(38, 38, 38, 0.5);`} />
-            <SocialIcon className="social" url="www.facebook.com" href="https://www.facebook.com/" bgColor={`rgba(38, 38, 38, 0.5);`} />
+            <SocialIcon className="social" url="www.instagram.com" href="https://www.instagram.com/culturalgold79/" bgColor={`#a34b2d`} />
+            <SocialIcon className="social" url="www.facebook.com" href="https://www.facebook.com/" bgColor={`#a34b2d`} />
             </div>
         </section>
 
@@ -59,7 +63,7 @@ function Footer() {
                 Message
                 <textarea name="message" placeholder="Your message"></textarea>
             </label>
-            <button className="btn" type="button">(Send)</button>
+            <button className="btn" type="button" onClick={sendMessage}>Send</button>
             
         </form>
   </footer>

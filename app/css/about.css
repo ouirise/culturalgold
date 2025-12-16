@@ -7,13 +7,25 @@ main {
     margin: auto;  
 }
 
-main p {
-    
-}
 main ul {
     display: grid;
     grid-template-rows: auto-fit;
     gap: 1rem;
     padding-left: 1.5rem;
     
+}
+
+@media (max-width: 769px) {
+  main {
+    width: 80vw;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) {
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+
 }
