@@ -15,9 +15,9 @@
 
   /* --- The 'Gold' (Accents) --- */
   /* The Terracotta/Clay from the headwrap - USE FOR BUTTONS */
-  --accent-primary: #E07C2E;
+  --accent-primary: #ed672e;
   /* A lighter version for hover states */
-  --accent-hover: #a34b2d;
+  --accent-hover: #ed672e;
 
   /* --- The Culture (Secondary) --- */
   /* The deep mahogany/wood red from the borders */
@@ -26,7 +26,9 @@
   --highlight: rgb(237, 185, 80);
   --text-main: #fff;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   font-family: var(--font-body);
   line-height: 1.3rem;

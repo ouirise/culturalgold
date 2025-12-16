@@ -11,6 +11,14 @@ export default function GlobalLayout({ children }: { children: React.ReactNode }
 }
 
 function Header() {
+    // const handleShopClick = (event: MouseEvent) => {
+    //     event.preventDefault();
+    //     if (window.location.pathname === '/culturalgold/') {
+    //         document.querySelector('#shop')?.scrollIntoView({ behavior: 'smooth' });
+    //     } else {
+    //         window.location.href = '/culturalgold/#shop';
+    //     }
+    // }
     return (
         <header>
         <h1>
@@ -33,7 +41,7 @@ function Header() {
     )
 }
 
-import {SocialIcon} from 'react-social-icons/component'
+import { SocialIcon } from 'react-social-icons/component'
 import 'react-social-icons/instagram'
 import 'react-social-icons/facebook'
 
@@ -53,8 +61,8 @@ function Footer() {
             </div>
             
             <div className="grid">
-            <SocialIcon className="social" url="www.instagram.com" href="https://www.instagram.com/culturalgold79/" bgColor={`#a34b2d`} />
-            <SocialIcon className="social" url="www.facebook.com" href="https://www.facebook.com/" bgColor={`#a34b2d`} />
+            <SocialIcon className="social" url="www.instagram.com" href="https://www.instagram.com/culturalgold79/" bgColor={`#f46b0a`} />
+            <SocialIcon className="social" url="www.facebook.com" href="https://www.facebook.com/" bgColor={`#f46b0a`} />
             </div>
         </section>
 

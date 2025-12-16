@@ -19,25 +19,23 @@ export default function Home() {
       .then((data) => setCollections(data));
   }, []);
 
-  const scrollToElement = (event: React.MouseEvent, id: string, padding: number = 0) => {
-  event.preventDefault();
-  const element = document.getElementById(id);
-  if (element) {
-    const targetPosition = element.getBoundingClientRect().top + window.scrollY - padding;
-    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-  }}
-
   return (
     <Layout>
       <article className="hero">
       <h2>Welcome to <span className="em">Cultural Gold!</span></h2>
       <p>Celebrating the love and enduring spirit of Africa</p>
+      <div className="img-container">
+        <div className="overlay"></div>
+        <img src="/culturalgold/images/castle-row.png" alt="from left to right: castle, a woman in a beautifully powerful pose, a tribe of men jumping, a man sitting holding up his left fist, African masks" />
+      </div>
       <p><span className="ital">The vibrant creativity</span>,<span className="heading small"> the rich stories</span>, <span className="strong small">the enduring legacy</span></p>
       <p>We invite to connect and rediscover the <span className="ital">beauty</span> that resides <span className="strong small">within</span></p>
-      <a className="btn" onClick={(e) => scrollToElement(e, 'shop')}><span>»</span> Explore Legacy <span>«</span></a>
+      
+      <a className="btn" href="#shop"><span>»</span> Explore OUR Legacy <span>«</span></a>
       </article>
 
-      <div id="shop">/</div>
+
+      <div id="shop">.</div>
       <h2 className="strong center">Goods infused with Culture</h2>
 
       <article className="collections">

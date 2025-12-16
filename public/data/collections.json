@@ -37,22 +37,22 @@
     "category": "Footwear"
   },
   {
-    "name": "Ndeye Jewelry",
+    "name": "Iru Accessories",
     "symbol": [
-      "Ndeye (Grace) Wolof"
+      "Iru (Tradition) Yoruba"
     ],
-    "focus": "Elegant",
-    "description": "Handcrafted gold and silver jewelry inspired by West African motifs, featuring intricate beadwork and traditional symbols of protection and prosperity.",
-    "category": "Jewelry"
+    "focus": "Cultural",
+    "description": "Handcrafted jewelry, scarves, and bags inspired by Yoruba traditions. Each piece tells a story of heritage, artistry, and cultural pride.",
+    "category": "Accessories"
   },
   {
-    "name": "Kanuri Bags",
+    "name": "Aṣẹ Artisanal",
     "symbol": [
-      "Kanuri (Strength) Kanuri"
+      "Aṣẹ (Power) Yoruba"
     ],
-    "focus": "Premium",
-    "description": "Luxury tote bags and crossbody bags made from premium leather and traditional Kanuri patterns, designed for both style and functionality.",
-    "category": "Bags"
+    "focus": "Handmade",
+    "description": "Unique, handcrafted items such as pottery, textiles, and wood carvings that reflect the rich artistic traditions of the Yoruba people.",
+    "category": "Artisanal"
   }
 ]
 
