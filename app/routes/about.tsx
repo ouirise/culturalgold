@@ -1,19 +1,24 @@
 import Layout from "~/components/layout"
 import "~/css/about.css"
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import image1 from "/culturalgold/images/pexels-harrun-muhammad-116282236-35117462.jpg" 
-import image2 from "/culturalgold/images/pexels-adedamola-adetoyi-503771-35156547.jpg"
-import image3 from "/culturalgold/images/pexels-hcdigital-3347324.jpg"
+import { useEffect } from "react"
 export default function About() {
+    function getViewportWidth() {
+    if (typeof window.innerWidth !== 'undefined') {
+        return window.innerWidth;
+    } else if (typeof document.documentElement !== 'undefined' && typeof document.documentElement.clientWidth !== 'undefined' && document.documentElement.clientWidth !== 0) {
+        return document.documentElement.clientWidth}
+}   
+    console.log(getViewportWidth())
     return (
         <Layout>
             <Parallax pages={2}>
                 <ParallaxLayer speed={1}>
                     <div className="container">
                     
-                    <img src={image1} alt="" />
-                    <img className='side' src={image2} alt="" />
-                    <img src={image3} alt="a tree standing in front of a starry night sky" />
+                    <img src={"/culturalgold/images/pexels-harrun-muhammad-116282236-35117462.jpg"} alt="" />
+                    <img className='side' src={"/culturalgold/images/pexels-adedamola-adetoyi-503771-35156547.jpg"} alt="" />
+                    <img src={"/culturalgold/images/pexels-hcdigital-3347324.jpg"} alt="a tree standing in front of a starry night sky" />
                     </div>
                 </ParallaxLayer>
                 <ParallaxLayer speed={0.5}>
